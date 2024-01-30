@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:freud_ai/configs/helper/splash_factor.dart';
 
 const fontFamily = 'Urbanist';
 
@@ -14,7 +13,6 @@ final themeLight = ThemeData(
   splashColor: Colors.transparent,
   scaffoldBackgroundColor: const Color(0xFFF7F4F2),
   colorScheme: lightColorScheme,
-  splashFactory: const NoSplashFactory(),
 );
 
 ///App Dark Theme

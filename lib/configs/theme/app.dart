@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:freud_ai/configs/theme/app_theme.dart';
+import 'package:ten_twenty_task/configs/theme/app_theme.dart';
 
 class App {
   static bool? isLtr;
@@ -7,6 +7,8 @@ class App {
 
   static init(BuildContext context) {
     print("ColorThemeInitialization");
+
     AppTheme.init(context);
+
   }
 }
