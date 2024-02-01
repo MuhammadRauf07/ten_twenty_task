@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:ten_twenty_task/configs/theme/provider/app_provider.dart';
-import 'package:ten_twenty_task/main/main_screen.dart';
 import 'package:ten_twenty_task/routes/routes.dart';
+import 'package:ten_twenty_task/screens/splash/splash_screen.dart';
+import 'package:ten_twenty_task/screens/tabs/watch/bloc/watch_bloc.dart';
 
 import 'configs/theme/core_theme.dart' as theme;
 
@@ -18,8 +19,8 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: const [
-        ///TODO
+      providers: [
+        BlocProvider<WatchBloc>(create: (context) => WatchBloc()),
       ],
       child: MultiProvider(
         providers: [
@@ -49,7 +50,7 @@ class MyAppCoreWidget extends StatelessWidget {
       darkTheme: theme.themeDark,
       navigatorKey: Navigate.navigatorKey,
       themeMode: provider.themeMode,
-      home: const MainScreen(),
+      home: const MyCustomSplashScreen(),
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ten_twenty_task/configs/helper/screen_util.dart';
@@ -69,7 +68,7 @@ class CommonWidgets {
         decoration: showUnderLine != null && showUnderLine
             ? TextDecoration.underline
             : TextDecoration.none,
-        fontFamily: 'Urbanist',
+        fontFamily: 'Poppins',
         fontWeight: weight ?? FontWeight.normal,
         letterSpacing: letterSpacing ?? -0.03);
   }

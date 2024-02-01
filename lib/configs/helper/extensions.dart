@@ -24,10 +24,10 @@ extension Extension on Widget {
   }
 
 
-  Widget clickListener({VoidCallback? voidCallback}){
+  Widget clickListener({VoidCallback? click}){
     return GestureDetector(
       onTap: (){
-        voidCallback!();
+        click!();
       },
       child: this,
     );

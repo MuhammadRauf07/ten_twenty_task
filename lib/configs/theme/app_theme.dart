@@ -18,11 +18,9 @@ class AppTheme {
   static final _core = AppCoreTheme(
     appWhiteColor: Colors.white,
     appColor: const Color(0xFF4F3422),
-    appColorLight: const Color(0xFF4F3422),
-    appColorDark: const Color(0xFF4F3422),
-    appBlackColor: const Color(0xFF4F3422),
-    appBlackColorLight: const Color(0xFF4F3422),
-    appBlackColorDark: const Color(0xFF4F3422),
+    appColorLight: Colors.black12,
+    appBlueColor: const Color(0xFF2E2739),
+    greyColor: const Color(0xFFDBDBDF),
   );
 
   ///App Core Light theme

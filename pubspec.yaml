@@ -22,12 +22,29 @@ dependencies:
   provider: ^6.1.1
 
 
+  #Http
+  http: ^1.2.0
+
+
   #Flutter SVG
   flutter_svg: ^2.0.9
+
 
   #Shared Preferences
   shared_preferences: ^2.2.2
 
+
+  #Cache Network Image
+  cached_network_image: ^3.3.1
+
+
+  #Shimmer Effect
+  shimmer: ^3.0.0
+
+
+
+  ## Animation for column and ListViews
+  flutter_staggered_animations: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -38,3 +55,22 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800

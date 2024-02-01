@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const fontFamily = 'Urbanist';
+const fontFamily = 'Poppins';
 
 ///App Light Theme
 final themeLight = ThemeData(
