@@ -4,7 +4,9 @@ import 'package:ten_twenty_task/configs/helper/screen_util.dart';
 import 'package:ten_twenty_task/configs/theme/app_theme.dart';
 
 class WatchDetailScreen extends StatelessWidget {
-  const WatchDetailScreen({super.key});
+  final int? movieId;
+
+  const WatchDetailScreen({super.key, this.movieId});
 
   @override
   Widget build(BuildContext context) {

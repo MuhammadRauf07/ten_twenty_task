@@ -32,7 +32,6 @@ class MainScreenState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: _pages[_selectedTab],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,

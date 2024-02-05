@@ -19,8 +19,10 @@ class AppTheme {
     appWhiteColor: Colors.white,
     appColor: const Color(0xFF4F3422),
     appColorLight: Colors.black12,
+    appBlackColor: Colors.black54,
     appBlueColor: const Color(0xFF2E2739),
-    greyColor: const Color(0xFFDBDBDF),
+    greyColor: const Color(0xFFEFEFEF),
+    darkGrey: const Color(0xFFF2F2F6),
   );
 
   ///App Core Light theme

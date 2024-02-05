@@ -8,24 +8,22 @@ import 'package:ten_twenty_task/routes/routes.dart';
 import 'package:ten_twenty_task/screens/detail/watch_detail_screen.dart';
 import 'package:ten_twenty_task/screens/tabs/watch/model/result_model.dart';
 
-class WatchItemView extends StatelessWidget {
+class SearchItemView extends StatelessWidget {
   final WatchResultModel? watchResultModel;
 
-  const WatchItemView({super.key, this.watchResultModel});
+  const SearchItemView({super.key, this.watchResultModel});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.h,
-      width: MediaQuery.sizeOf(context).width,
       margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 12.w),
-      child: Stack(
+      child: Row(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(14.w),
             child: SizedBox(
-              height: 250.h,
-              width: MediaQuery.sizeOf(context).width,
+              height: 100.h,
+              width: 100.w,
               child: CachedNetworkImage(
                 key: UniqueKey(),
                 imageUrl: watchResultModel!.backdropPath!,
@@ -36,17 +34,29 @@ class WatchItemView extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 20.h,
-            left: 15.w,
-            child: CommonWidgets().makeDynamicText(
-                size: 22,
-                weight: FontWeight.w800,
-                text: watchResultModel!.originalTitle,
-                color: AppTheme.cT!.appWhiteColor),
-          )
+          30.width,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CommonWidgets().makeDynamicText(
+                  size: 18,
+                  weight: FontWeight.w600,
+                  text: watchResultModel!.originalTitle,
+                  color: AppTheme.cT!.appBlackColor),
+              20.height,
+              CommonWidgets().makeDynamicText(
+                  size: 18,
+                  weight: FontWeight.w400,
+                  text: watchResultModel!.originalLanguage,
+                  color: AppTheme.cT!.appColorLight),
+            ],
+          ),
+          const Spacer(),
+          const Icon(Icons.more_vert)
         ],
       ),
-    ).clickListener(click: () => Navigate.pushNamed(WatchDetailScreen(movieId: watchResultModel!.id!)));
+    ).clickListener(
+        click: () => Navigate.pushNamed(
+            WatchDetailScreen(movieId: watchResultModel!.id!)));
   }
 }

@@ -7,7 +7,7 @@ import 'package:ten_twenty_task/configs/helper/extensions.dart';
 import 'package:ten_twenty_task/configs/helper/screen_util.dart';
 import 'package:ten_twenty_task/configs/theme/app_theme.dart';
 import 'package:ten_twenty_task/routes/routes.dart';
-import 'package:ten_twenty_task/screens/search/search_screen.dart';
+import 'package:ten_twenty_task/screens/gridview/movies_grid_screen.dart';
 import 'package:ten_twenty_task/screens/tabs/watch/bloc/watch_bloc.dart';
 import 'package:ten_twenty_task/screens/tabs/watch/bloc/watch_state.dart';
 import 'package:ten_twenty_task/screens/tabs/watch/view/watch_itemview.dart';
@@ -26,16 +26,18 @@ class WatchScreen extends StatelessWidget {
   Widget bodyOfWatchScreen() {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CommonWidgets().makeDynamicText(
-                text: "Watch", size: 18, color: AppTheme.cT!.appColor),
-            const Icon(Icons.search, size: 30).clickListener(
-              click: () => Navigate.pushNamed(const WatchSearchScreen()),
-            )
-          ],
-        ),
+        Padding(
+            padding: EdgeInsets.only(left: 12.w, right: 12.w, top: 50.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CommonWidgets().makeDynamicText(
+                    text: "Watch", size: 18, color: AppTheme.cT!.appColor),
+                const Icon(Icons.search, size: 30),
+              ],
+            ).clickListener(
+              click: () => Navigate.pushNamed(const MovieGridScreen()),
+            )),
         watchList()
       ],
     );
@@ -82,39 +84,6 @@ class WatchScreen extends StatelessWidget {
           }
         }),
       ),
-    );
-  }
-
-  ///This Will show the Questions List in GridView
-  Widget showGridList(WatchLoadedState state) {
-    return GridView.builder(
-      itemCount: state.watchModel.watchResultModel!.length,
-      shrinkWrap: true,
-      padding: EdgeInsets.only(top: 20.h),
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisExtent: 130,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-      ),
-      itemBuilder: (context, index) {
-        return AnimationConfiguration.staggeredGrid(
-          position: index,
-          duration: const Duration(milliseconds: 800),
-          columnCount: 2,
-          child: ScaleAnimation(
-            child: FadeInAnimation(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
-                child: WatchItemView(
-                    watchResultModel:
-                        state.watchModel.watchResultModel![index]),
-              ),
-            ),
-          ),
-        );
-      },
     );
   }
 }
