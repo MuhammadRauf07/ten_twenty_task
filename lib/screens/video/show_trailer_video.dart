@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,15 +21,10 @@ class CustomVideoPlayerScreen extends StatefulWidget {
 
 class CustomVideoPlayerScreenState extends State<CustomVideoPlayerScreen> {
   YoutubePlayerController? _videoPlayerController;
-  bool _isPlaying = true;
-  bool _isMuted = false;
-  bool _isFullScreen = false;
-  late Timer _timer;
   Duration currentPosition = Duration.zero;
   Duration totalDuration = Duration.zero;
 
   bool isResolutionLoaded = false;
-  double _aspectRatio = 16 / 9;
 
   @override
   void initState() {
