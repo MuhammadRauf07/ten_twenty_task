@@ -27,17 +27,17 @@ class WatchScreen extends StatelessWidget {
     return Column(
       children: [
         Padding(
-            padding: EdgeInsets.only(left: 12.w, right: 12.w, top: 50.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CommonWidgets().makeDynamicText(
-                    text: "Watch", size: 18, color: AppTheme.cT!.appColor),
-                const Icon(Icons.search, size: 30),
-              ],
-            ).clickListener(
-              click: () => Navigate.pushNamed(const MovieGridScreen()),
-            )),
+          padding: EdgeInsets.only(left: 12.w, right: 12.w, top: 50.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CommonWidgets().makeDynamicText(
+                  text: "Watch", size: 18, color: AppTheme.cT!.appColor),
+              const Icon(Icons.search, size: 30),
+            ],
+          ),
+        ).clickListener(
+            click: () => Navigate.pushNamed(const MovieGridScreen())),
         watchList()
       ],
     );

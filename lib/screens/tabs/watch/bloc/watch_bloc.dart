@@ -20,7 +20,7 @@ class WatchBloc extends Bloc<WatchEvent, WatchState> {
     emit(WatchLoadingState());
 
     try {
-      WatchModel watchModel = await watchDataResources.getWatchList(); // Implement the fetchData function
+      WatchModel watchModel = await watchDataResources.getMovieList(); // Implement the fetchData function
       emit(WatchLoadedState(watchModel: watchModel));
     } catch (error) {
 

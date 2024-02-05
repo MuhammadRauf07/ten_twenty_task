@@ -6,6 +6,7 @@ class AppCoreTheme {
   Color? appBlueColor;
   Color? greyColor;
   Color? darkGrey;
+  Color? appBlueColorLight;
   Color? appWhiteColor;
   Color? appBlackColor;
 
@@ -17,6 +18,7 @@ class AppCoreTheme {
     this.darkGrey,
     this.appWhiteColor,
     this.appBlackColor,
+    this.appBlueColorLight,
   });
 
   /// Method to create a copy of AppCoreTheme
@@ -28,6 +30,7 @@ class AppCoreTheme {
     Color? darkGrey,
     Color? appWhiteColor,
     Color? appBlackColor,
+    Color? appBlueColorLight,
   }) {
     return AppCoreTheme(
       appColor: appColor ?? this.appColor,
@@ -37,6 +40,7 @@ class AppCoreTheme {
       darkGrey: darkGrey ?? this.darkGrey,
       appWhiteColor: appWhiteColor ?? this.appWhiteColor,
       appBlackColor: appBlackColor ?? this.appBlackColor,
+      appBlueColorLight: appBlueColorLight ?? this.appBlueColorLight,
     );
   }
 }

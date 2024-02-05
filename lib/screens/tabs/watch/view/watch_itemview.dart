@@ -47,6 +47,12 @@ class WatchItemView extends StatelessWidget {
           )
         ],
       ),
-    ).clickListener(click: () => Navigate.pushNamed(WatchDetailScreen(movieId: watchResultModel!.id!)));
+    ).clickListener(
+      click: () => Navigate.pushNamed(
+        WatchDetailScreen(
+          movieId: watchResultModel!.id!,
+        ),
+      ),
+    );
   }
 }

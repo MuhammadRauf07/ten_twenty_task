@@ -21,6 +21,7 @@ class AppTheme {
     appColorLight: Colors.black12,
     appBlackColor: Colors.black54,
     appBlueColor: const Color(0xFF2E2739),
+    appBlueColorLight: const Color(0xFF61C3F2),
     greyColor: const Color(0xFFEFEFEF),
     darkGrey: const Color(0xFFF2F2F6),
   );

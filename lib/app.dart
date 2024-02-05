@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:ten_twenty_task/configs/theme/provider/app_provider.dart';
 import 'package:ten_twenty_task/routes/routes.dart';
+import 'package:ten_twenty_task/screens/detail/bloc/detail_bloc.dart';
 import 'package:ten_twenty_task/screens/splash/splash_screen.dart';
 import 'package:ten_twenty_task/screens/tabs/watch/bloc/watch_bloc.dart';
+import 'package:ten_twenty_task/screens/video/bloc/video_bloc.dart';
 
 import 'configs/theme/core_theme.dart' as theme;
 
@@ -21,6 +23,8 @@ class MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<WatchBloc>(create: (context) => WatchBloc()),
+        BlocProvider<DetailBloc>(create: (context) => DetailBloc()),
+        BlocProvider<VideoBloc>(create: (context) => VideoBloc()),
       ],
       child: MultiProvider(
         providers: [

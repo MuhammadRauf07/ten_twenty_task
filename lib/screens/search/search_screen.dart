@@ -29,6 +29,9 @@ class SearchScreenState extends State<SearchScreen> {
     );
   }
 
+
+
+  ///Search Screen Body
   Widget searchScreenBody(BuildContext context) {
     return Column(
       children: [
@@ -42,6 +45,8 @@ class SearchScreenState extends State<SearchScreen> {
     );
   }
 
+
+  /// Watch List
   Widget watchList(BuildContext context) {
     return Expanded(
       child: AnimationLimiter(
@@ -59,6 +64,7 @@ class SearchScreenState extends State<SearchScreen> {
     );
   }
 
+  ///Search Screen List, with Filtration
   Widget searchList(WatchLoadedState state, BuildContext context) {
     final List<WatchResultModel> filteredList = state.watchModel.watchResultModel!
         .where((item) => item.originalTitle!.toLowerCase().contains(textEditingController.text.toLowerCase()))
@@ -89,6 +95,9 @@ class SearchScreenState extends State<SearchScreen> {
     );
   }
 
+
+
+  ///Search Bar
   Widget searchBar() {
     return Container(
       height: 52.h,
